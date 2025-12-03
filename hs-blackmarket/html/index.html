@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <title>HS Black Market</title>
+</head>
+<body>
+  <div id="panel" class="panel hidden">
+    <div class="sidebar">
+      <div class="brand">BLACK<br><span>MARKET</span></div>
+
+      <div class="search">
+        <input id="search" type="text" placeholder="Search by name" />
+        <button id="btnSearch">🔍</button>
+      </div>
+
+      <div id="tabs" class="tabs"></div>
+      <div id="grid" class="grid"></div>
+
+      <div class="cart">
+        <div class="cart-title">🛒 CART</div>
+        <div class="cart-items"></div>
+        <div class="cart-total">Total: <span id="total">$0</span></div>
+        <button id="checkout" disabled>Checkout</button>
+      </div>
+    </div>
+
+    <div class="qty-modal hidden" id="qty-modal">
+      <div class="qty-box">
+        <h2 id="qty-title">Quantity</h2>
+        <div class="qty-controls">
+          <button id="qty-dec">-</button>
+          <span id="qty-value">1</span>
+          <button id="qty-inc">+</button>
+        </div>
+        <div class="qty-buttons">
+          <button id="qty-cancel">Cancel</button>
+          <button id="qty-add">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

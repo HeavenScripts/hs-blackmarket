@@ -1,0 +1,117 @@
+*{box-sizing:border-box}
+:root{--text:#e5e7eb;--muted:#9ca3af;--accent:#10b981;--line:#1f2937}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto;background:transparent}
+.panel{position:fixed;inset:0;display:flex;background:transparent;opacity:1}
+.panel.hidden{display:none}
+
+.sidebar{
+  width:520px;height:100vh;background:rgba(13,16,19,.92);
+  border-right:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:10px
+}
+.brand{font-weight:900;font-size:28px;line-height:1}
+.brand span{color:var(--accent)}
+
+.search{display:flex;gap:6px}
+.search input{flex:1;background:#0f1417;border:1px solid var(--line);color:var(--text);padding:10px;border-radius:6px}
+.search button{border:1px solid var(--accent);background:#0e1f18;color:var(--accent);border-radius:6px;width:46px;cursor:pointer}
+
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{padding:6px 10px;border-radius:6px;background:#121418;border:1px solid var(--line);cursor:pointer;color:#9aa4af}
+.tab.active {
+  color: var(--accent);
+  background: transparent; 
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.4); 
+  outline: none;
+}
+
+
+.grid {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 8px 6px 120px 2px;
+  margin-right: 4px;
+}
+.grid::-webkit-scrollbar { width: 8px; }
+.grid::-webkit-scrollbar-thumb {
+  background: #153a30;
+  border-radius: 8px;
+}
+.card {
+  background: #111317;
+  border: 1px solid #1c2630;
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  height: 170px;
+}
+
+.card .img {
+  width: 100%;
+  height: 90px;
+  border-radius: 6px;
+  background: #0f1114 center/contain no-repeat;
+}
+
+.card .title {
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+}
+
+.card .price {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+}
+
+.card .add {
+  width: 100%;
+  padding: 6px 0;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: #0e1f18;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+.card .add:hover {
+  background: #103428;
+  color: #1fffaa;
+}
+
+.cart{background:#0d1015;border:1px solid var(--line);border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.cart-title{font-weight:800;color:#cbd5e1}
+.cart-items{max-height:100px;overflow-y:auto}
+.cart-row{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px dashed #1f2937}
+.cart-row:last-child{border-bottom:0}
+.cart-name{flex:1;color:#fff;font-size:12px}
+.cart-qty{min-width:48px;text-align:center;background:#0f1417;border:1px solid #1f2937;border-radius:6px;padding:2px 6px;font-size:12px;color:#cbd5e1}
+.cart-price{min-width:80px;text-align:right;color:var(--accent);font-weight:700;font-size:12px}
+.cart-remove{border:1px solid #ef4444;color:#ef4444;background:#200;border-radius:6px;padding:4px 8px;cursor:pointer;font-size:12px}
+.cart-total{display:flex;justify-content:space-between;color:#cbd5e1}
+#checkout{width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--accent);background:#0e1f18;color:var(--accent);font-weight:800;cursor:pointer}
+#checkout:disabled{opacity:.5;cursor:not-allowed}
+
+.qty-modal{position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center}
+.qty-modal.hidden{display:none}
+.qty-box{width:260px;background:#111317;border:1px solid #1f2937;border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px;color:#fff}
+.qty-controls{display:flex;align-items:center;justify-content:center;gap:14px}
+.qty-controls button{width:32px;height:32px;border-radius:8px;background:#0f1417;color:#e5e7eb;border:1px solid #1f2937;cursor:pointer}
+.qty-buttons{display:flex;gap:8px;justify-content:space-between}
+.qty-buttons button{flex:1;padding:8px 12px;border-radius:8px;border:1px solid #1f2937;background:#0f1417;color:#e5e7eb;cursor:pointer}
+.qty-buttons #qty-add{border-color:var(--accent);color:var(--accent);background:#0e1f18}
+
+
